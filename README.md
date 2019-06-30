@@ -1,4 +1,4 @@
-![Alt text](http://gokams.or.kr/images/notice/upload190625_img.jpg)
+![Alt text](https://cfile1.onoffmix.com/images/event/182468/s)
 
 # ArtPlus
 예술해커톤
@@ -15,3 +15,6 @@
 이정호(숭실대 기계공학) : 임베디드 프로그래밍
 정재훈(숭실대 행정학) : 서버 프로그래밍
 
+# URL
+https://www.onoffmix.com/event/182468  
+http://www.ggac.or.kr/  

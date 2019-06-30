@@ -1,4 +1,4 @@
-![Alt text](https://cfile1.onoffmix.com/images/event/182468/s)
+![Alt text](https://cfile1.onoffmix.com/images/event/182468/s.jpg)
 
 # ArtPlus
 예술해커톤

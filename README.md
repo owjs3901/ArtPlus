@@ -1,5 +1,3 @@
-![Alt text](https://cfile1.onoffmix.com/images/event/182468/s.jpg)
-
 # ArtPlus
 예술해커톤
 
@@ -18,3 +16,5 @@
 # URL
 https://www.onoffmix.com/event/182468  
 http://www.ggac.or.kr/  
+
+![Alt text](http://gokams.or.kr/images/notice/upload190625_img.jpg)

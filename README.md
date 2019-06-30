@@ -1,7 +1,7 @@
 # ArtPlus
 예술해커톤
 
-![CreatePlan](http://gokams.or.kr/images/notice/upload190625_img.jpg)
+![Alt text]](http://gokams.or.kr/images/notice/upload190625_img.jpg)
 
 # 개요
 4차 산업혁명이 일어나고 있는 21세기.  

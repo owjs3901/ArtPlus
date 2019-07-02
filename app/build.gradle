@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 
 android {
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
     compileSdkVersion 28
     buildToolsVersion "29.0.0"
     defaultConfig {
@@ -19,6 +22,8 @@ android {
     }
 }
 
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -26,5 +31,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.estimote:sdk:0.10.4@aar'
+
+    implementation 'no.nordicsemi.android.support.v18:scanner:1.4.0'
+
 }

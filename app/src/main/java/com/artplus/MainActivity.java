@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity{
 					System.out.println(r.getDevice().toString());
 
 					try{
-						System.out.println(new String(r.getScanRecord().getBytes(),"utf-8"));
+						Toast.makeText(MainActivity.this, new String(r.getScanRecord().getBytes(),"utf-8"), Toast.LENGTH_SHORT).show();
 					} catch(UnsupportedEncodingException e){
 						e.printStackTrace();
 					}

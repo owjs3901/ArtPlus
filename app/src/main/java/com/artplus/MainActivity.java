@@ -2,21 +2,22 @@ package com.artplus;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.ParcelUuid;
 import android.os.RemoteException;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import com.artplus.connect.ConnectObj;
+import com.artplus.connect.ServerConnector;
 import no.nordicsemi.android.support.v18.scanner.*;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity{
 	TextView tvId;
@@ -53,19 +54,24 @@ public class MainActivity extends AppCompatActivity{
 
 
 				System.out.println("스캔 결과2"+results.size());
-				for(ScanResult r:results){
+				for(final ScanResult r:results){
 					System.out.println("=====================================");
 					System.out.println("distance"+r.getRssi());
 					System.out.println("name"+r.getDevice().getName());
 					System.out.println(r.toString());
 					System.out.println("sc"+r.getScanRecord());
 					System.out.println(r.getDevice().toString());
+					runOnUiThread(new Runnable(){
+						@Override
+						public void run(){
+							try{
+								tvId.setText(new String(r.getScanRecord().getBytes(),"utf-8"));
+							} catch(UnsupportedEncodingException e){
+								e.printStackTrace();
+							}
 
-					try{
-						Toast.makeText(MainActivity.this, new String(r.getScanRecord().getBytes(),"utf-8"), Toast.LENGTH_SHORT).show();
-					} catch(UnsupportedEncodingException e){
-						e.printStackTrace();
-					}
+						}
+					});
 				}
 
 
@@ -78,17 +84,25 @@ public class MainActivity extends AppCompatActivity{
 
 			}
 		});
+		ServerConnector.loadData(this,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
+				"id", "idtest","pw", "pwtest","email", "emailtest","gender", "gendertest","name", "namertest","age","50"));
+
 	}
 
 	@Override
 	protected void onResume(){
 		super.onResume();
 	}
-
 	@Override
 	protected void onDestroy(){
-
 		super.onDestroy();
 	}
 
+	@Override
+	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data){
+		super.onActivityResult(requestCode, resultCode, data);
+		for(String ss:data.getStringArrayExtra("r")){
+			System.out.println("야야야양ㅇ"+ss);
+		}
+	}
 }

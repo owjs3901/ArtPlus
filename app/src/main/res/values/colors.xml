@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bg">#252525</color>
+    <color name="a">#00252525</color>
+    <color name="thema">#FF015E</color>
+    <color name="thema_grey">#9C9C9C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="tooltip_text">#595959</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>

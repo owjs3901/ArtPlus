@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Art Plus</string>
+	<string name="server">183.97.200.230:5647</string>
+	<string name="app_name">Art Plus</string>
 </resources>

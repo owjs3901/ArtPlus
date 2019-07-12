@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".RegisterActivity"
+		android:background="@color/bg">
+	<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginHorizontal="20dp"
+	              android:layout_centerInParent="true" android:layout_above="@id/btn_set" android:layout_marginBottom="40dp">
+		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/logo" android:layout_gravity="center_horizontal" android:layout_marginBottom="40dp"/>
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="bottom">
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NAME |" android:textColor="@color/thema_grey"
+			          android:textSize="14dp" android:layout_gravity="center_vertical"/>
+			<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14dp" android:id="@+id/name" android:textColor="@color/thema" android:background="#00000000"/>
+		</LinearLayout>
+		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
+
+		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
+			<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="여자" android:textColor="@color/thema_grey" android:scaleX="0.7" android:scaleY="0.7" android:id="@+id/gender_g" android:checked="true"/>
+			<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="남자" android:textColor="@color/thema_grey" android:scaleX="0.7" android:scaleY="0.7" android:id="@+id/gender_m"/>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="bottom" android:layout_marginTop="20dp">
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AGE    |" android:textColor="@color/thema_grey"
+			          android:textSize="14dp" android:layout_gravity="center_vertical"/>
+			<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14dp" android:id="@+id/age" android:textColor="@color/thema" android:background="#00000000" android:inputType="number"/>
+		</LinearLayout>
+		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="bottom" android:layout_marginTop="20dp">
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MAIL  |" android:textColor="@color/thema_grey"
+			          android:textSize="14dp" android:layout_gravity="center_vertical"/>
+			<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14dp" android:id="@+id/mail" android:textColor="@color/thema" android:background="#00000000" android:inputType="textEmailAddress"/>
+		</LinearLayout>
+		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="bottom" android:layout_marginTop="20dp">
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID        |" android:textColor="@color/thema_grey"
+			          android:textSize="14dp" android:layout_gravity="center_vertical"/>
+			<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14dp" android:id="@+id/id" android:textColor="@color/thema" android:background="#00000000"/>
+		</LinearLayout>
+		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
+
+		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="20dp">
+			<TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:text="PW     |"
+			          android:textColor="@color/thema_grey"
+			          android:textSize="14dp"/>
+
+			<EditText android:layout_width="match_parent" android:textSize="14dp" android:layout_height="wrap_content" android:id="@+id/pw" android:background="#00000000"
+			          android:inputType="textPassword" android:textColor="@color/thema"/>
+		</LinearLayout>
+		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
+
+
+
+		<LinearLayout android:layout_gravity="center_horizontal" android:layout_marginTop="40dp"
+		              android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical"     android:id="@+id/btn_set">
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+				<Button android:layout_width="100dp" android:layout_height="71dp" android:gravity="center" android:id="@+id/register"
+				        android:background="@color/thema" android:textColor="@color/white" android:text="회원가입\nREGISTER" android:textSize="16dp"/>
+				<Button android:layout_width="100dp" android:layout_height="71dp"  android:gravity="center" android:id="@+id/back"
+				        android:background="@color/thema_grey" android:textColor="@color/white" android:text="뒤로가기\nBACK" android:textSize="16dp" android:layout_marginLeft="15dp"/>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+
+</RelativeLayout>

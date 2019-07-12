@@ -15,6 +15,11 @@
 			android:supportsRtl="true"
 			android:theme="@style/AppTheme.NoActionBar"
 			android:usesCleartextTraffic="true">
+		<activity
+				android:name=".DashBoardActivity"
+				android:label="@string/title_activity_dash_board"
+				android:theme="@style/AppTheme.NoActionBar.NoActionBar">
+		</activity>
 		<activity android:name=".RegisterActivity">
 		</activity>
 		<activity android:name=".SelectActivity">
@@ -27,7 +32,6 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".LoadActivity"/>
-		<activity android:name=".MainActivity"/>
 	</application>
 
 </manifest>

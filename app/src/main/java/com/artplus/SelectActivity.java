@@ -37,7 +37,7 @@ public class SelectActivity extends AppCompatActivity{
 			@Override
 			public void onClick(View view){
 				if(((RadioButton) findViewById(R.id.layout_1)).isChecked()){
-					startActivity(new Intent(SelectActivity.this, MainActivity.class));
+					startActivity(new Intent(SelectActivity.this, DashBoardActivity.class));
 					finish();
 				}
 				else Toast.makeText(SelectActivity.this, "책자형은 선택할 수 없습니다.", Toast.LENGTH_LONG).show();

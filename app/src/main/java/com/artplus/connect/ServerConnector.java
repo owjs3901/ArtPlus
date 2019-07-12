@@ -35,8 +35,9 @@ public class ServerConnector{
 	public static enum ConnectionType implements Serializable{
 		REGISTER("register"),
 		LOGIN("login"),
-		CHECK_ACCOUNT("check_account"),
-		REVIEW("review"),
+		CHECK_ACCOUNT_ID("check_account"),
+		CHECK_ACCOUNT_PW("check_account"),
+		GET_REVIEW("get_review"),
 		INFORMATION("information"),
 		SEARCH("search"),
 		RESISTER_REVIEW("register_review"),

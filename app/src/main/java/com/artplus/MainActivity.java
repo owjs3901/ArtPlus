@@ -85,9 +85,8 @@ public class MainActivity extends AppCompatActivity{
 
 			}
 		});
-		ServerConnector.loadData(this,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
-				"id", "idtest","pw", "pwtest","email", "emailtest","gender", "gendertest","name", "namertest","age","50"));
-
+		LoadData.sendRegister(this, "a", "b", "c", "d", "e", 80);
+//		LoadData.sendLogin(this, , );
 	}
 
 	@Override
@@ -102,10 +101,31 @@ public class MainActivity extends AppCompatActivity{
 	@Override
 	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data){
 		super.onActivityResult(requestCode, resultCode, data);
-//		if(LoadData.resultType(data).)
-//		switch(){
-//
-//		}
-
+		switch(LoadData.resultType(data)){
+			case LOGIN:
+				System.out.println(LoadData.getLogin(data));
+				break;
+			case GET_REVIEW:
+//				System.out.println(LoadData.getRegisterReview(data));
+				break;
+			case SEARCH:
+//				System.out.println(LoadData.get(data));
+				break;
+			case REGISTER:
+				System.out.println(LoadData.getRegister(data));
+				break;
+			case INFORMATION:
+//				System.out.println(LoadData.getIn(data));
+				break;
+			case CHECK_ACCOUNT_ID:
+				System.out.println(LoadData.getCheckAccountId(data));
+				break;
+			case CHECK_ACCOUNT_PW:
+				System.out.println(LoadData.getCheckAccountPw(data));
+				break;
+			case RESISTER_REVIEW:
+				System.out.println(LoadData.getRegisterReview(data));
+				break;
+		}
 	}
 }

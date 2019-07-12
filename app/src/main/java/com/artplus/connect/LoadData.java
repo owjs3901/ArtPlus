@@ -13,29 +13,30 @@ public class LoadData{
 	}
 
 	public static void sendCheckAccountId(Activity a,String email){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
+		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_ID,
 				"email",email));
 	}
 	public static void sendCheckAccountPw(Activity a,String email,String id){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
+		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_PW,
 				"email",email,"id",id));
 	}
 	public static void sendLogin(Activity a,String id,String pw){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
+		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.LOGIN,
 				"pw",pw,"id",id));
 	}
 	public static void sendRegisterReview(Activity a,String id,String content,String center,String fest,double st){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
+		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.RESISTER_REVIEW,
 				"id",id,"content",content,"star",String.valueOf(st),"festival",fest,"center",center));
 	}
 
 	//result
 
 	public static LoadStat getRegisterReview(Intent i){
-		return Integer.parseInt(i.getStringArrayExtra("r")[0])==1?LoadStat.SU:LoadStat.EX;
+		return Integer.parseInt(i.getStringArrayListExtra("r").get(0))==1?LoadStat.SU:LoadStat.EX;
 	}
 	public static LoadStat getRegister(Intent i){
-		switch(Integer.parseInt(i.getStringArrayExtra("r")[0])){
+		System.out.println("뭐받음"+i.getStringArrayListExtra("r").get(0));
+		switch(Integer.parseInt(i.getStringArrayListExtra("r").get(0))){
 			case 1:
 				return LoadStat.SU;
 			case 2:
@@ -46,7 +47,7 @@ public class LoadData{
 		return LoadStat.EX;
 	}
 	public static LoadStat getLogin(Intent i){
-		switch(Integer.parseInt(i.getStringArrayExtra("r")[0])){
+		switch(Integer.parseInt(i.getStringArrayListExtra("r").get(0))){
 			case 1:
 				return LoadStat.SU;
 			case 2:
@@ -55,7 +56,7 @@ public class LoadData{
 		return LoadStat.EX;
 	}
 	public static LoadResult getCheckAccountId(Intent i){
-		String[] st=i.getStringArrayExtra("r")[0].split(":");
+		String[] st=i.getStringArrayListExtra("r").get(0).split(":");
 		switch(st[0]){
 			case "1":
 				return new LoadResult(LoadStat.FA,st[1]);
@@ -66,7 +67,7 @@ public class LoadData{
 		}
 	}
 	public static LoadResult getCheckAccountPw(Intent i){
-		String[] st=i.getStringArrayExtra("r")[0].split(":");
+		String[] st=i.getStringArrayListExtra("r").get(0).split(":");
 		switch(st[0]){
 			case "1":
 				return new LoadResult(LoadStat.FA,st[1]);

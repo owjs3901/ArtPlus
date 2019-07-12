@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import com.artplus.connect.ConnectObj;
+import com.artplus.connect.LoadData;
 import com.artplus.connect.ServerConnector;
 import no.nordicsemi.android.support.v18.scanner.*;
 
@@ -101,8 +102,10 @@ public class MainActivity extends AppCompatActivity{
 	@Override
 	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data){
 		super.onActivityResult(requestCode, resultCode, data);
-		for(String ss:data.getStringArrayExtra("r")){
-			System.out.println("야야야양ㅇ"+ss);
-		}
+//		if(LoadData.resultType(data).)
+//		switch(){
+//
+//		}
+
 	}
 }

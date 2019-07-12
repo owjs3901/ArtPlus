@@ -17,8 +17,9 @@ public class LoadActivity extends AppCompatActivity{
 		super.onCreate(savedInstanceState);
 		System.out.println("로드드드드");
 		setContentView(R.layout.activity_load);
+		ConnectObj on=(ConnectObj) getIntent().getSerializableExtra("type");
 		try{
-			list=new ServerConnector.Connect(this).execute((ConnectObj) getIntent().getSerializableExtra("type")).get();
+			list=new ServerConnector.Connect(this).execute(on).get();
 		} catch(ExecutionException e){
 			e.printStackTrace();
 		} catch(InterruptedException e){
@@ -29,6 +30,7 @@ public class LoadActivity extends AppCompatActivity{
 		for(int i = 0; i <list.size(); i++)
 			st[i]=list.get(i);
 		in.putExtra("r", st);
+		in.putExtra("type", on.getType().ordinal());
 		setResult(RESULT_OK,in);
 	}
 }

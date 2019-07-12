@@ -33,12 +33,18 @@ public class ServerConnector{
 
 	public static String ip="http://183.97.200.230:5647";
 	public static enum ConnectionType implements Serializable{
-		REGISTER(ip+"/register"),
+		REGISTER("register"),
+		LOGIN("login"),
+		CHECK_ACCOUNT("check_account"),
+		REVIEW("review"),
+		INFORMATION("information"),
+		SEARCH("search"),
+		RESISTER_REVIEW("register_review"),
 		;
 		private String url;
 		ConnectionType(String st){
 			try{
-				url = st;
+				url = ip+"/"+st;
 			}catch(Exception e){e.printStackTrace();}
 		}
 

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+	<ImageView
+			android:id="@+id/img1"
+			android:layout_weight="1"
+			android:layout_margin="2dp"
+			android:src="@drawable/gps"
+			android:layout_width="150dp"
+			android:layout_height="136dp"/>
+
+	<LinearLayout
+
+			android:layout_marginLeft="6dp"
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+
+		<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<TextView
+					android:id="@+id/name"
+					android:textColor="@color/thema"
+					android:text="테스트"
+					android:height="13dp"
+					android:textSize="12dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"/>
+
+			<ImageView
+					android:id="@+id/star1"
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/star0"
+					android:layout_width="13dp"
+					android:layout_height="13dp"/>
+
+			<ImageView
+					android:id="@+id/star2"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/star0"
+					android:layout_width="13dp"
+					android:layout_height="13dp"/>
+
+			<ImageView
+					android:id="@+id/star3"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/star0"
+					android:layout_width="13dp"
+					android:layout_height="13dp"/>
+
+			<ImageView
+					android:id="@+id/star4"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/star0"
+					android:layout_width="13dp"
+					android:layout_height="13dp"/>
+
+			<ImageView
+					android:id="@+id/star5"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/star0"
+					android:layout_width="13dp"
+					android:layout_height="13dp"/>
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_marginVertical="2dp"
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+			<ImageView
+					android:layout_gravity="center"
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/gps"
+					android:layout_width="10dp"
+					android:layout_height="14dp"/>
+
+			<TextView
+					android:layout_gravity="center"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="10dp"
+					android:text="경기도 용인시 왹져구 왹왹동 왹굳빌딩"/>
+		</LinearLayout>
+
+		<TextView
+				android:id="@+id/tag"
+				android:layout_gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="10dp"
+				android:textColor="@color/thema"
+				android:text="tag"/>
+		<TextView
+				android:id="@+id/date"
+				android:layout_gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="10dp"
+				android:textColor="@color/tooltip_text"
+				android:text="전시기간"/>
+		<TextView
+				android:id="@+id/adress"
+				android:layout_gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="10dp"
+				android:text="경기도 용인시 왹져구 왹왹동 왹굳빌딩"/>
+
+		<TextView
+				android:id="@+id/descrip"
+				android:layout_gravity="center"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:textSize="10dp"
+				android:textColor="@color/thema_grey"
+				android:text="설명"/>
+		<LinearLayout
+				android:layout_marginVertical="2dp"
+				android:background="#000000"
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+
+			<ImageView
+					android:id="@+id/img2"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/gps"
+					android:layout_width="57dp"
+					android:layout_height="51dp"/>
+			<ImageView
+					android:id="@+id/img3"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/gps"
+					android:layout_width="57dp"
+					android:layout_height="51dp"/>
+			<ImageView
+					android:id="@+id/img4"
+
+					android:layout_marginHorizontal="1dp"
+					android:src="@drawable/gps"
+					android:layout_width="57dp"
+					android:layout_height="51dp"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

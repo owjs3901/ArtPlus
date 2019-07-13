@@ -11,6 +11,9 @@ public class LoadData{
 		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
 				"id", id,"pw", pw,"email",email,"gender", gender,"name", name,"age",String.valueOf(age)));
 	}
+	public static void sendSearch(Activity a,String tag,String word){
+		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.SEARCH,"tag",tag,"word",word));
+	}
 
 	public static void sendCheckAccountId(Activity a,String email){
 		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_ID,

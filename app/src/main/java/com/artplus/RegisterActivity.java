@@ -13,6 +13,11 @@ import com.artplus.connect.LoadData;
 public class RegisterActivity extends AppCompatActivity{
 
 	@Override
+	public void onBackPressed(){
+		startActivity(new Intent(this,LoginActivity.class));
+		finish();
+	}
+	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);

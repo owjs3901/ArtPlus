@@ -16,11 +16,11 @@
 		<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_gravity="center">
 			<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginRight="5dp" >
 				<RadioButton android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="기본형" android:textColor="@color/thema_grey" android:checked="true" android:id="@+id/layout_1"/>
-				<ImageButton android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/w1_on" android:id="@+id/layout_1_img"/>
+				<ImageButton android:background="#00000000" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/normal_ex_on" android:id="@+id/layout_1_img"/>
 			</LinearLayout>
 			<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginLeft="5dp">
 				<RadioButton android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="책자형" android:textColor="@color/thema_grey" android:id="@+id/layout_2"/>
-				<ImageButton android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/w2_off" android:id="@+id/layout_2_img"/>
+				<ImageButton android:background="#00000000" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/book_ex_off" android:id="@+id/layout_2_img"/>
 			</LinearLayout>
 		</LinearLayout>
 		<Button android:id="@+id/ok" android:layout_gravity="center" android:layout_width="100dp" android:layout_height="50dp" android:background="@color/thema" android:text="결정" android:textColor="@color/white" android:layout_marginTop="30dp"/>

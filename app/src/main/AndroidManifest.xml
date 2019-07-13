@@ -15,6 +15,14 @@
 			android:supportsRtl="true"
 			android:theme="@style/AppTheme.NoActionBar"
 			android:usesCleartextTraffic="true">
+		<activity android:name=".PwLoseActivity">
+		</activity>
+		<activity android:name=".IdLoseActivity">
+		</activity>
+		<activity android:name=".LoginLoseActivity">
+		</activity>
+		<activity android:name=".GuestLoginActivity">
+		</activity>
 		<activity
 				android:name=".DashBoardActivity"
 				android:label="@string/title_activity_dash_board"

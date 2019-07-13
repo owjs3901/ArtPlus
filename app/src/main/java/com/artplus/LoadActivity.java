@@ -9,6 +9,8 @@ import com.artplus.connect.ServerConnector;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class LoadActivity extends AppCompatActivity{
 
@@ -18,8 +20,20 @@ public class LoadActivity extends AppCompatActivity{
 		super.onCreate(savedInstanceState);
 		System.out.println("로드드드드");
 		setContentView(R.layout.activity_load);
+
+	}
+
+
+	@Override
+	protected void onResume(){
+		super.onResume();
+		System.out.println("스타트");
 		ConnectObj on=(ConnectObj) getIntent().getSerializableExtra("type");
+		System.out.println("스타트~~");
+
 		try{
+			System.out.println("스2323타트");
+
 			list=new ServerConnector.Connect(this).execute(on).get();
 		} catch(ExecutionException e){
 			e.printStackTrace();
@@ -33,6 +47,7 @@ public class LoadActivity extends AppCompatActivity{
 			if(list.get(i).trim().length()!=0)
 				li.add(list.get(i));
 		}
+		if(list.size()==0)list.add("-1");
 		System.out.println("승~승");
 		in.putStringArrayListExtra("r", li);
 		in.putExtra("type", on.getType().ordinal());

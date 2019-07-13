@@ -9,7 +9,11 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class SelectActivity extends AppCompatActivity{
-
+	@Override
+	public void onBackPressed(){
+		startActivity(new Intent(this,LoginActivity.class));
+		finish();
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -18,17 +22,35 @@ public class SelectActivity extends AppCompatActivity{
 		findViewById(R.id.layout_1_img).setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View view){
-				((ImageView)findViewById(R.id.layout_1_img)).setImageDrawable(getDrawable(R.drawable.w1_on));
-				((ImageView)findViewById(R.id.layout_2_img)).setImageDrawable(getDrawable(R.drawable.w2_off));
+				((ImageView)findViewById(R.id.layout_1_img)).setImageDrawable(getDrawable(R.drawable.normal_ex_on));
+				((ImageView)findViewById(R.id.layout_2_img)).setImageDrawable(getDrawable(R.drawable.book_ex_off));
 				((RadioButton) findViewById(R.id.layout_1)).setChecked(true);
 				((RadioButton) findViewById(R.id.layout_2)).setChecked(false);
+			}
+		});
+		findViewById(R.id.layout_1).setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View view){
+				((ImageView)findViewById(R.id.layout_1_img)).setImageDrawable(getDrawable(R.drawable.normal_ex_on));
+				((ImageView)findViewById(R.id.layout_2_img)).setImageDrawable(getDrawable(R.drawable.book_ex_off));
+				((RadioButton) findViewById(R.id.layout_1)).setChecked(true);
+				((RadioButton) findViewById(R.id.layout_2)).setChecked(false);
+			}
+		});
+		findViewById(R.id.layout_2).setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View view){
+				((ImageView)findViewById(R.id.layout_2_img)).setImageDrawable(getDrawable(R.drawable.book_ex_on));
+				((ImageView)findViewById(R.id.layout_1_img)).setImageDrawable(getDrawable(R.drawable.normal_ex_off));
+				((RadioButton) findViewById(R.id.layout_2)).setChecked(true);
+				((RadioButton) findViewById(R.id.layout_1)).setChecked(false);
 			}
 		});
 		findViewById(R.id.layout_2_img).setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View view){
-				((ImageView)findViewById(R.id.layout_2_img)).setImageDrawable(getDrawable(R.drawable.w2_on));
-				((ImageView)findViewById(R.id.layout_1_img)).setImageDrawable(getDrawable(R.drawable.w1_off));
+				((ImageView)findViewById(R.id.layout_2_img)).setImageDrawable(getDrawable(R.drawable.book_ex_on));
+				((ImageView)findViewById(R.id.layout_1_img)).setImageDrawable(getDrawable(R.drawable.normal_ex_off));
 				((RadioButton) findViewById(R.id.layout_2)).setChecked(true);
 				((RadioButton) findViewById(R.id.layout_1)).setChecked(false);
 			}

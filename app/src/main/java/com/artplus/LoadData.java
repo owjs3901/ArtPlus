@@ -1,31 +1,33 @@
-package com.artplus.connect;
+package com.artplus;
 
 import android.app.Activity;
 import android.content.Intent;
+import com.artplus.connect.ConnectObj;
+import com.artplus.connect.ServerConnector;
 
 public class LoadData{
 	public static ServerConnector.ConnectionType resultType(Intent in){
 		return ServerConnector.ConnectionType.values()[in.getIntExtra("type", 0)];
 	}
 	public static void sendRegister(Activity a,String id,String pw,String email,String gender,String name,int age){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
+		ServerConnector.loadData(a, com.artplus.connect.ConnectObj.createObj(ServerConnector.ConnectionType.REGISTER,
 				"id", id,"pw", pw,"email",email,"gender", gender,"name", name,"age",String.valueOf(age)));
 	}
 
 	public static void sendCheckAccountId(Activity a,String email){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_ID,
+		ServerConnector.loadData(a, com.artplus.connect.ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_ID,
 				"email",email));
 	}
 	public static void sendCheckAccountPw(Activity a,String email,String id){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_PW,
+		ServerConnector.loadData(a, com.artplus.connect.ConnectObj.createObj(ServerConnector.ConnectionType.CHECK_ACCOUNT_PW,
 				"email",email,"id",id));
 	}
 	public static void sendLogin(Activity a,String id,String pw){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.LOGIN,
+		ServerConnector.loadData(a, com.artplus.connect.ConnectObj.createObj(ServerConnector.ConnectionType.LOGIN,
 				"pw",pw,"id",id));
 	}
 	public static void sendRegisterReview(Activity a,String id,String content,String center,String fest,double st){
-		ServerConnector.loadData(a,ConnectObj.createObj(ServerConnector.ConnectionType.RESISTER_REVIEW,
+		ServerConnector.loadData(a, ConnectObj.createObj(ServerConnector.ConnectionType.RESISTER_REVIEW,
 				"id",id,"content",content,"star",String.valueOf(st),"festival",fest,"center",center));
 	}
 

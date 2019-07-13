@@ -1,4 +1,4 @@
-package com.artplus.connect;
+package com.artplus;
 
 import android.app.Activity;
 import android.content.ContentProviderResult;
@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import com.artplus.LoadActivity;
 import com.artplus.R;
+import com.artplus.connect.ConnectObj;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -21,7 +22,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class ServerConnector{
-	public static void loadData(Activity con, ConnectObj obj){
+	public static void loadData(Activity con, com.artplus.connect.ConnectObj obj){
 		Intent in=new Intent(con, LoadActivity.class);
 		in.putExtra("type", obj);
 		con.startActivityForResult(in, 3000);
@@ -62,7 +63,7 @@ public class ServerConnector{
 			return url;
 		}
 	}
-	public static class Connect extends AsyncTask<ConnectObj,Void, List<String>>{
+	public static class Connect extends AsyncTask<com.artplus.connect.ConnectObj,Void, List<String>>{
 		private Activity con;
 		public Connect(Activity con){
 			this.con=con;

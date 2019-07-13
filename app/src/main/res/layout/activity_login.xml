@@ -8,15 +8,14 @@
 		tools:context=".LoginActivity"
 		android:background="@color/bg"
 		>
-
-
 	<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginHorizontal="20dp"
 	              android:layout_centerInParent="true" android:layout_above="@id/btn_set" android:layout_marginBottom="40dp">
 		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/logo" android:layout_gravity="center_horizontal" android:layout_marginBottom="40dp"/>
 		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="bottom">
 			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID        |" android:textColor="@color/thema_grey"
 			          android:textSize="14dp" android:layout_gravity="center_vertical"/>
-			<EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14dp" android:id="@+id/id" android:textColor="@color/thema" android:background="#00000000"/>
+			<EditText android:hint="아이디를 입력해주세요." android:textColorHint="@color/tooltip_text" android:layout_width="match_parent" android:layout_height="wrap_content"
+			          android:textSize="14dp" android:id="@+id/id" android:textColor="@color/thema" android:background="#00000000" android:singleLine="true"/>
 		</LinearLayout>
 		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
 		<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="38dp">
@@ -24,8 +23,8 @@
 			          android:textColor="@color/thema_grey"
 			          android:textSize="14dp"/>
 
-			<EditText android:layout_width="match_parent" android:textSize="14dp" android:layout_height="wrap_content" android:id="@+id/pw" android:background="#00000000"
-			          android:inputType="textPassword" android:textColor="@color/thema"/>
+			<EditText android:hint="비밀번호를 입력해주세요." android:textColorHint="@color/tooltip_text" android:layout_width="match_parent" android:textSize="14dp" android:layout_height="wrap_content" android:id="@+id/pw" android:background="#00000000"
+			          android:inputType="textPassword" android:textColor="@color/thema" android:singleLine="true"/>
 		</LinearLayout>
 		<View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/thema_grey"/>
 		<Button android:layout_width="150dp" android:layout_height="16dp" android:id="@+id/help"
@@ -43,4 +42,25 @@
 			        android:background="@color/thema_grey" android:textColor="@color/white" android:text="계정없이 로그인\nGUEST LOGIN" android:textSize="16dp" android:id="@+id/guest_login" />
 		</LinearLayout>
 	</LinearLayout>
+	<RelativeLayout
+			android:id="@+id/load"
+			android:background="@color/bg"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent" android:gravity="center">
+		<LinearLayout
+				android:layout_marginBottom="271dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical" android:gravity="center">
+			<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/logo"/>
+			<ImageView
+					android:layout_marginTop="20dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/phases"/>
+		</LinearLayout>
+	</RelativeLayout>
 </RelativeLayout>

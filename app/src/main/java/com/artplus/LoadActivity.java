@@ -18,21 +18,17 @@ public class LoadActivity extends AppCompatActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		System.out.println("로드드드드");
 		setContentView(R.layout.activity_load);
 
 	}
 
-
 	@Override
 	protected void onResume(){
 		super.onResume();
-		System.out.println("스타트");
+		System.out.println("로딩 시작");
 		ConnectObj on=(ConnectObj) getIntent().getSerializableExtra("type");
-		System.out.println("스타트~~");
-
 		try{
-			System.out.println("스2323타트");
+			System.out.println("로딩 진짜 시작");
 
 			list=new ServerConnector.Connect(this).execute(on).get();
 		} catch(ExecutionException e){
@@ -40,15 +36,14 @@ public class LoadActivity extends AppCompatActivity{
 		} catch(InterruptedException e){
 			e.printStackTrace();
 		}
+		System.out.println("로딩끝");
 		Intent in=new Intent();
 		ArrayList<String> li=new ArrayList<>();
-		System.out.println("승승");
 		for(int i = 0; i <list.size(); i++){
 			if(list.get(i).trim().length()!=0)
 				li.add(list.get(i));
 		}
 		if(list.size()==0)list.add("-1");
-		System.out.println("승~승");
 		in.putStringArrayListExtra("r", li);
 		in.putExtra("type", on.getType().ordinal());
 		setResult(RESULT_OK,in);

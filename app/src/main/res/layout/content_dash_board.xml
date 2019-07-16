@@ -8,9 +8,39 @@
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		tools:showIn="@layout/app_bar_dash_board"
 		tools:context=".DashBoardActivity">
-	<ListView
-			android:id="@+id/search_list"
+	<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"/>
-
+			android:layout_height="match_parent" android:orientation="vertical">
+		<ImageView
+				android:layout_weight="1"
+				android:scaleType="fitXY"
+				android:src="@drawable/emage1_event"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		<ImageView
+				android:layout_weight="1"
+				android:scaleType="fitXY"
+				android:src="@drawable/newopen_artsenter"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		<ImageView
+				android:layout_weight="1"
+				android:scaleType="fitXY"
+				android:src="@drawable/deadline_artsenter"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+		<ImageView
+				android:layout_weight="1"
+				android:scaleType="fitXY"
+				android:src="@drawable/recommend_artsenter"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+	</LinearLayout>
+	<ImageView
+			android:id="@+id/load"
+			android:scaleType="fitXY"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:src="@drawable/event"
+			/>
 </android.support.constraint.ConstraintLayout>

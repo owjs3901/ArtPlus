@@ -8,5 +8,8 @@
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		tools:showIn="@layout/app_bar_search"
 		tools:context=".DashBoardActivity">
-
+	<ListView
+			android:id="@+id/search_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
 </android.support.constraint.ConstraintLayout>

@@ -9,6 +9,7 @@
 		android:fitsSystemWindows="true"
 		tools:openDrawer="start">
 
+
 	<include
 			layout="@layout/app_bar_dash_board"
 			android:layout_width="match_parent"
@@ -22,5 +23,6 @@
 			app:headerLayout="@layout/nav_header_dash_board"
 			android:background="#ffffff"
 			/>
+
 
 </android.support.v4.widget.DrawerLayout>

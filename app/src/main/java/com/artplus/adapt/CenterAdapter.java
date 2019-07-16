@@ -42,33 +42,71 @@ public class CenterAdapter extends BaseAdapter{
 		if(view==null)
 			view=inflater.inflate(R.layout.search_el,viewGroup,false);
 		Center c=list.get(i);
-		((TextView)view.findViewById(R.id.name)).setText(c.name);
-		c.loadImg((ImageView)view.findViewById(R.id.img1),(ImageView)view.findViewById(R.id.img2),(ImageView)view.findViewById(R.id.img3),(ImageView)view.findViewById(R.id.img4));
-		((TextView)view.findViewById(R.id.tag)).setText(c.tag);
-		((TextView)view.findViewById(R.id.date)).setText(c.date);
-		((TextView)view.findViewById(R.id.adress)).setText(c.address);
-		((TextView)view.findViewById(R.id.descrip)).setText(c.list.get(0));
+		if(!c.isLoad){
+			((TextView) view.findViewById(R.id.name)).setText(c.name);
+			c.loadImg((ImageView) view.findViewById(R.id.img1), (ImageView) view.findViewById(R.id.img2), (ImageView) view.findViewById(R.id.img3), (ImageView) view.findViewById(R.id.img4));
+			((TextView) view.findViewById(R.id.tag)).setText(c.tag);
+			((TextView) view.findViewById(R.id.date)).setText(c.date);
+			((TextView) view.findViewById(R.id.adress)).setText(c.address);
+			((TextView) view.findViewById(R.id.descrip)).setText(c.cont);
+		}
 		switch(c.star){
 			case 10:
 				((ImageView)view.findViewById(R.id.star5)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star4)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star3)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
 			case 9:
 				((ImageView)view.findViewById(R.id.star5)).setImageResource(R.drawable.star05);
+				((ImageView)view.findViewById(R.id.star4)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star3)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
 			case 8:
 				((ImageView)view.findViewById(R.id.star4)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star3)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
 			case 7:
 				((ImageView)view.findViewById(R.id.star4)).setImageResource(R.drawable.star05);
+				((ImageView)view.findViewById(R.id.star3)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
+
 			case 6:
 				((ImageView)view.findViewById(R.id.star3)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
+
 			case 5:
 				((ImageView)view.findViewById(R.id.star3)).setImageResource(R.drawable.star05);
+				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
 			case 4:
 				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star1);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
+
 			case 3:
 				((ImageView)view.findViewById(R.id.star2)).setImageResource(R.drawable.star05);
+				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
+
 			case 2:
 				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star1);
+				break;
+
 			case 1:
 				((ImageView)view.findViewById(R.id.star1)).setImageResource(R.drawable.star05);
+				break;
+
 			case 0:
 		}
 		return view;

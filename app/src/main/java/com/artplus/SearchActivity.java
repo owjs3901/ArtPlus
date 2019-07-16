@@ -16,10 +16,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.artplus.adapt.CenterAdapter;
 import com.artplus.connect.LoadData;
 import com.artplus.connect.ServerConnector;
+import com.artplus.obj.Center;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +38,11 @@ public class SearchActivity extends AppCompatActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search);
 		String[] s=getIntent().getStringExtra("s").split("!@!");
+		CenterAdapter c=new CenterAdapter(this);
+		for(String st:s)
+			c.addCenter(Center.createCenter(st));
 
-
-
+		((ListView)findViewById(R.id.search_list)).setAdapter(c);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
@@ -87,10 +92,15 @@ public class SearchActivity extends AppCompatActivity
 				for(TextView v:list)
 					if(v.getCurrentTextColor()==getColor(R.color.thema))
 						tag+=v.getText().toString()+":";
-				if(tag.length()>0)
+				if(tag.length()>0){
 					LoadData.sendSearch(SearchActivity.this, tag, s);
+					finish();
+				}
 				else if(s.length()<2) Toast.makeText(SearchActivity.this, "태그가 없을시 검색은 2글자 이상이어야합니다", Toast.LENGTH_LONG).show();
-				else LoadData.sendSearch(SearchActivity.this, tag, s);
+				else{
+					LoadData.sendSearch(SearchActivity.this, tag, s);
+					finish();
+				}
 
 			}
 		});
@@ -161,7 +171,10 @@ public class SearchActivity extends AppCompatActivity
 	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent data){
 		super.onActivityResult(requestCode, resultCode, data);
 		if(LoadData.resultType(data).equals(ServerConnector.ConnectionType.SEARCH)){
+			Intent in=new Intent(this,SearchActivity.class);
 			System.out.println(data.getStringArrayListExtra("r"));
+			in.putExtra("s", data.getStringArrayListExtra("r").get(0));
+			startActivity(in);
 		}
 	}
 }

@@ -8,10 +8,7 @@ import android.os.AsyncTask;
 import com.artplus.LoadActivity;
 import com.artplus.R;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.Serializable;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;

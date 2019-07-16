@@ -5,6 +5,7 @@
               android:layout_height="wrap_content">
 
 	<ImageView
+			android:scaleType="fitXY"
 			android:id="@+id/img1"
 			android:layout_weight="1"
 			android:layout_margin="2dp"
@@ -34,6 +35,7 @@
 					android:layout_height="wrap_content"/>
 
 			<ImageView
+					android:scaleType="fitXY"
 					android:id="@+id/star1"
 					android:layout_marginHorizontal="1dp"
 					android:src="@drawable/star0"
@@ -42,7 +44,7 @@
 
 			<ImageView
 					android:id="@+id/star2"
-
+					android:scaleType="fitXY"
 					android:layout_marginHorizontal="1dp"
 					android:src="@drawable/star0"
 					android:layout_width="13dp"
@@ -50,7 +52,7 @@
 
 			<ImageView
 					android:id="@+id/star3"
-
+					android:scaleType="fitXY"
 					android:layout_marginHorizontal="1dp"
 					android:src="@drawable/star0"
 					android:layout_width="13dp"
@@ -58,7 +60,7 @@
 
 			<ImageView
 					android:id="@+id/star4"
-
+					android:scaleType="fitXY"
 					android:layout_marginHorizontal="1dp"
 					android:src="@drawable/star0"
 					android:layout_width="13dp"
@@ -66,7 +68,7 @@
 
 			<ImageView
 					android:id="@+id/star5"
-
+					android:scaleType="fitXY"
 					android:layout_marginHorizontal="1dp"
 					android:src="@drawable/star0"
 					android:layout_width="13dp"
@@ -87,6 +89,7 @@
 					android:layout_height="14dp"/>
 
 			<TextView
+					android:id="@+id/adress"
 					android:layout_gravity="center"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -110,13 +113,6 @@
 				android:textSize="10dp"
 				android:textColor="@color/tooltip_text"
 				android:text="전시기간"/>
-		<TextView
-				android:id="@+id/adress"
-				android:layout_gravity="center"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:textSize="10dp"
-				android:text="경기도 용인시 왹져구 왹왹동 왹굳빌딩"/>
 
 		<TextView
 				android:id="@+id/descrip"

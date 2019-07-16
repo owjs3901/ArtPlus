@@ -1,5 +1,6 @@
 package com.artplus;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.artplus.connect.BLE;
 import com.artplus.connect.LoadData;
 import com.artplus.connect.ServerConnector;
 
@@ -33,7 +35,11 @@ public class DashBoardActivity extends AppCompatActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		BLE.startBLE(this);
 		setContentView(R.layout.activity_dash_board);
+		ObjectAnimator animation = ObjectAnimator.ofFloat(findViewById(R.id.load), "alpha", 0f);
+		animation.setDuration(2000);
+		animation.start();
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
